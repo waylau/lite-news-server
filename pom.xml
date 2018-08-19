@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.waylau.smm</groupId>
+	<artifactId>lite-book-mall</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<name>lite-book-mall</name>
+	<url>https://github.com/waylau/lite-book-mall</url>
+	<organization>
+		<name>waylau.com</name>
+		<url>https://waylau.com</url>
+	</organization>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<lite.version>1.0.0</lite.version>		
+		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+		<maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.waylau.lite</groupId>
+			<artifactId>lite</artifactId>
+			<version>${lite.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- 设置编译插件 -->
+			<plugin>
+				<groupId>
+                        org.apache.maven.plugins
+                </groupId>
+				<artifactId>
+                    maven-compiler-plugin
+                </artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>1.8</source> <!-- 源代码使用的开发版本 -->
+					<target>1.8</target>  <!-- 需要生成的目标class文件的编译版本 -->
+				</configuration>
+			</plugin>
+			<!-- 可执行的jar插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>${maven-shade-plugin.version}</version>
+				<configuration>
+					<createDependencyReducedPom>false</createDependencyReducedPom>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>com.waylau.lite.mall.App</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+	</build>
+</project>
