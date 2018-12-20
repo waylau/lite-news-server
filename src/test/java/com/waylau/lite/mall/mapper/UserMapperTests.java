@@ -3,6 +3,11 @@
  */
 package com.waylau.lite.mall.mapper;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +41,14 @@ class UserMapperTests {
 	void testUpdateUser() {
 		User user = userMapper.getUser(1L);
 		user.setUsername("waylau");
+		user.setBirthday(new Date());
+		
+		LocalDate localDate = LocalDate.now();   
+		ZoneId zone = ZoneId.systemDefault();    
+		Instant instant = localDate.atStartOfDay().atZone(zone).toInstant();    
+		java.util.Date date = Date.from(instant);
+		
+		user.setUpdatedTime( date);
 		userMapper.updateUser(user);
 		user = userMapper.getUser(1L);
 		logger.info(user.toString());

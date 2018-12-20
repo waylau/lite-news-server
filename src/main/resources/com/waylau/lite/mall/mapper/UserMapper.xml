@@ -6,11 +6,14 @@
 <mapper namespace="com.waylau.lite.mall.mapper.UserMapper">
 
   <select id="getUser" resultType="com.waylau.lite.mall.domain.User">
-        select user_id as userId, username from t_user where user_id = #{userId}
+        select user_id as userId, username, birthday, updated_time as updatedTime 
+        from t_user where user_id = #{userId}
   </select>
   
   <update id="updateUser" parameterType="com.waylau.lite.mall.domain.User">
-        update t_user set username = #{username}
+        update t_user set username = #{username},
+        birthday = #{birthday, jdbcType=DATE},
+        updated_time = #{updatedTime, jdbcType=DATE}
         where  user_id = #{userId ,jdbcType=NUMERIC}
   </update>
   

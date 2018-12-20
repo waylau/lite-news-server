@@ -15,4 +15,16 @@
 	  <property name="basePackage" value="com.waylau.lite.mall.mapper" />
 	</bean>
     
+    <!-- 自定义 -->
+    <!--声明TypeHandler bean-->
+    <bean id="dateShortTypeHandler" class="com.waylau.lite.mall.type.DateShortTypeHandler"/>
+    
+    <!-- MyBatis 工厂 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	    <property name="dataSource" ref="dataSource" />
+	    
+	    <!--TypeHandler注入-->
+        <property name="typeHandlers" ref="dateShortTypeHandler"/>
+	</bean>
+	
 </beans>

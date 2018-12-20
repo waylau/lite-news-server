@@ -4,8 +4,10 @@
 package com.waylau.lite.mall;
 
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 
 import com.waylau.lite.LiteConfig;
+import com.waylau.lite.mall.security.WebSecurityConfig;
 
 /**
  * Application Configuration.
@@ -14,6 +16,7 @@ import com.waylau.lite.LiteConfig;
  * @author <a href="https://waylau.com">Way Lau</a> 
  */
 @ComponentScan(basePackages = { "com.waylau.lite.mall" })  
+@Import({WebSecurityConfig.class})
 public class AppConfig extends LiteConfig {
 
 }

@@ -3,6 +3,8 @@
  */
 package com.waylau.lite.mall.domain;
 
+import java.util.Date;
+
 /**
  * User.
  * 
@@ -13,6 +15,8 @@ public class User {
 
 	private Long userId;
 	private String username;
+	private Date birthday;
+	private Date updatedTime;
 	
 	public Long getUserId() {
 		return userId;
@@ -26,9 +30,22 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	public Date getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+	public Date getUpdatedTime() {
+		return updatedTime;
+	}
+	public void setUpdatedTime(Date updatedTime) {
+		this.updatedTime = updatedTime;
+	}
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + "]";
+		return "User [userId=" + userId + ", username=" + username + ", birthday=" + birthday + ", updatedTime="
+				+ updatedTime + "]";
 	}
 	
 }
