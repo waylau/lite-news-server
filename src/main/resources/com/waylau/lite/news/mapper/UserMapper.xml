@@ -3,14 +3,14 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.waylau.lite.mall.mapper.UserMapper">
+<mapper namespace="com.waylau.lite.news.mapper.UserMapper">
 
-  <select id="getUser" resultType="com.waylau.lite.mall.domain.User">
+  <select id="getUser" resultType="com.waylau.lite.news.domain.User">
         select user_id as userId, username, birthday, updated_time as updatedTime 
         from t_user where user_id = #{userId}
   </select>
   
-  <update id="updateUser" parameterType="com.waylau.lite.mall.domain.User">
+  <update id="updateUser" parameterType="com.waylau.lite.news.domain.User">
         update t_user set username = #{username},
         birthday = #{birthday, jdbcType=DATE},
         updated_time = #{updatedTime, jdbcType=DATE}

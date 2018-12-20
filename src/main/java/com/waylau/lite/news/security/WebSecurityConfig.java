@@ -1,7 +1,7 @@
 /**
  * Welcome to https://waylau.com
  */
-package com.waylau.lite.mall.security;
+package com.waylau.lite.news.security;
 
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

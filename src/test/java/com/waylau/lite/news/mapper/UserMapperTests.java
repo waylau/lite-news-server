@@ -1,7 +1,7 @@
 /**
  * Welcome to https://waylau.com
  */
-package com.waylau.lite.mall.mapper;
+package com.waylau.lite.news.mapper;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -14,8 +14,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 
-import com.waylau.lite.mall.AppConfig;
-import com.waylau.lite.mall.domain.User;
+import com.waylau.lite.news.AppConfig;
+import com.waylau.lite.news.domain.User;
+import com.waylau.lite.news.mapper.UserMapper;
 
 /**
  * UserMapper Tests.

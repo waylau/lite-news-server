@@ -1,7 +1,7 @@
 /**
  * Welcome to https://waylau.com
  */
-package com.waylau.lite.mall.domain;
+package com.waylau.lite.news.domain;
 
 import java.util.Date;
 

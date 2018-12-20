@@ -1,7 +1,7 @@
 /**
  * Welcome to https://waylau.com
  */
-package com.waylau.lite.mall.type;
+package com.waylau.lite.news.type;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;

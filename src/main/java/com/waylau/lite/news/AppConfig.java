@@ -1,13 +1,13 @@
 /**
  * Welcome to https://waylau.com
  */
-package com.waylau.lite.mall;
+package com.waylau.lite.news;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
 import com.waylau.lite.LiteConfig;
-import com.waylau.lite.mall.security.WebSecurityConfig;
+import com.waylau.lite.news.security.WebSecurityConfig;
 
 /**
  * Application Configuration.
