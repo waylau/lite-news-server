@@ -1,6 +1,6 @@
-# Lite Book Mall
+# Lite News Server
 
-A book-mall based on [Lite](https://github.com/waylau/lite) framework. 
+A news app server-side based on [Lite](https://github.com/waylau/lite) framework. 
 
 ## Docs 文档
 

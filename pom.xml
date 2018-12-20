@@ -5,12 +5,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.waylau.smm</groupId>
-	<artifactId>lite-book-mall</artifactId>
+	<artifactId>lite-news-server</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>lite-book-mall</name>
-	<url>https://github.com/waylau/lite-book-mall</url>
+	<name>lite-news-server</name>
+	<url>https://github.com/waylau/lite-news-server</url>
 	<organization>
 		<name>waylau.com</name>
 		<url>https://waylau.com</url>
