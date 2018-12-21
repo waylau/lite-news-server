@@ -24,7 +24,7 @@ public class WebSecurityConfig
 	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception { 
-		
+
 		// 启用form表单认证
 		http.authorizeRequests().anyRequest().authenticated().and().formLogin().and().httpBasic();
 	}

@@ -12,12 +12,12 @@
 
 	<!-- 扫描 MyBatis Mapper 接口所在的包 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-	  <property name="basePackage" value="com.waylau.lite.mall.mapper" />
+	  <property name="basePackage" value="com.waylau.lite.news.mapper" />
 	</bean>
     
     <!-- 自定义 -->
     <!--声明TypeHandler bean-->
-    <bean id="dateShortTypeHandler" class="com.waylau.lite.mall.type.DateShortTypeHandler"/>
+    <bean id="dateShortTypeHandler" class="com.waylau.lite.news.type.DateShortTypeHandler"/>
     
     <!-- MyBatis 工厂 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
