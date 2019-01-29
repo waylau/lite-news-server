@@ -6,7 +6,7 @@ How to use Lite.
 
 ```java
 @RestController
-@RequestMapping("/mall")
+@RequestMapping("/hello")
 public class HelloController {
 
 	@GetMapping("/hi")
@@ -25,7 +25,7 @@ import org.springframework.context.annotation.ComponentScan;
 import com.waylau.lite.LiteConfig;
 
 
-@ComponentScan(basePackages = { "com.waylau.lite.mall" })  
+@ComponentScan(basePackages = { "com.waylau.lite.news" })  
 public class AppConfig extends LiteConfig {
 
 }
@@ -47,9 +47,9 @@ public class App {
 ## Run App
 
 ```
-java -jar target/lite-book-mall-1.0.0.jar
+java -jar target/lite-news-server-1.0.0.jar
 ```
 
 ## Visit App
 
-Visit <http://localhost:8080/mall/hi> in brower, and you will get "Hello World! Welcome to visit waylau.com!".
+Visit <http://localhost:8080/hello/hi> in brower, and you will get "Hello World! Welcome to visit waylau.com!".

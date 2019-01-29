@@ -15,7 +15,7 @@ import com.waylau.lite.news.security.WebSecurityConfig;
  * @since 1.0.0 2018年8月19日
  * @author <a href="https://waylau.com">Way Lau</a> 
  */
-@ComponentScan(basePackages = { "com.waylau.lite.mall" })  
+@ComponentScan(basePackages = { "com.waylau.lite.news" })  
 @Import({WebSecurityConfig.class})
 public class AppConfig extends LiteConfig {
 
