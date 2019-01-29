@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.waylau.lite.news.mapper.NewsMapper">
+
+	<insert id="createNews"
+		parameterType="com.waylau.lite.news.domain.News">
+		insert into t_news (title, author, creation, content)
+		values( #{title}, #{author}, #{creation}, #{content})
+	</insert>
+
+	<delete id="deleteNews" parameterType="long">
+		delete from t_news
+		where news_id = #{newsId}
+	</delete>
+
+	<update id="updateNews"
+		parameterType="com.waylau.lite.news.domain.News">
+		update t_news set
+		title = #{title},
+		author = #{author},
+		content = #{content}
+		where news_id = #{newsId}
+	</update>
+
+	<select id="getNews" parameterType="long"
+		resultType="com.waylau.lite.news.domain.News">
+		select news_id as newsId, title, author, content
+		from t_news where news_id = #{newsId}
+	</select>
+
+</mapper>

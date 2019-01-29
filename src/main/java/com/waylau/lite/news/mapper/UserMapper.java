@@ -8,13 +8,17 @@ import com.waylau.lite.news.domain.User;
 /**
  * User Mapper.
  * 
- * @since 1.0.0 2018年8月19日
+ * @since 1.0.0 2019年1月19日
  * @author <a href="https://waylau.com">Way Lau</a> 
  */
 public interface UserMapper {
 
-	User getUser(Long userId);
+	void createUser(User user);
 
+	void deleteUser(Long userId);
+	
 	void updateUser(User user);
+
+	User getUser(Long userId);
 
 }
