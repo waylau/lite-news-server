@@ -30,4 +30,9 @@
 		from t_user where user_id = #{userId}
 	</select>
 
+	<select id="getUserByUsername" parameterType="string"
+		resultType="com.waylau.lite.news.domain.User">
+		select user_id as userId, username, password, email
+		from t_user where username = #{username}
+	</select>
 </mapper>

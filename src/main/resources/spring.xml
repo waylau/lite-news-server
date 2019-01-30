@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="
         http://www.springframework.org/schema/beans 
@@ -12,19 +12,22 @@
 
 	<!-- 扫描 MyBatis Mapper 接口所在的包 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-	  <property name="basePackage" value="com.waylau.lite.news.mapper" />
+		<property name="basePackage"
+			value="com.waylau.lite.news.mapper" />
 	</bean>
-    
-    <!-- 自定义 -->
-    <!--声明TypeHandler bean-->
-    <bean id="dateShortTypeHandler" class="com.waylau.lite.news.type.DateShortTypeHandler"/>
-    
-    <!-- MyBatis 工厂 -->
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-	    <property name="dataSource" ref="dataSource" />
-	    
-	    <!--TypeHandler注入-->
-        <property name="typeHandlers" ref="dateShortTypeHandler"/>
+
+	<!-- 自定义 -->
+	<!--声明TypeHandler bean -->
+	<bean id="dateShortTypeHandler"
+		class="com.waylau.lite.news.type.DateShortTypeHandler" />
+
+	<!-- MyBatis 工厂 -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+
+		<!--TypeHandler注入 -->
+		<property name="typeHandlers" ref="dateShortTypeHandler" />
 	</bean>
-	
+
 </beans>

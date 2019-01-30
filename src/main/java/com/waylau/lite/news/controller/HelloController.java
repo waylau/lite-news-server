@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Hello 控制器.
  * 
- * @since 1.0.0 2018年3月21日
+ * @since 1.0.0 2019年1月21日
  * @author <a href="https://waylau.com">Way Lau</a>
  */
 @RestController

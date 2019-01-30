@@ -66,4 +66,9 @@ class UserMapperTests {
 		assertEquals("waylau", user.getUsername());
 	}
 
+	@Test
+	void testGetUserByUsername() {
+		User user = userMapper.getUserByUsername("waylau");
+		assertEquals("waylau", user.getUsername());
+	}
 }
