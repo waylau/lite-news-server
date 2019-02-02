@@ -1,5 +1,7 @@
 package com.waylau.lite.news.service;
 
+import java.util.List;
+
 import com.waylau.lite.news.domain.News;
 
 /**
@@ -17,4 +19,6 @@ public interface NewsService {
 	void updateNews(News news);
 
 	News getNews(Long newsId);
+	
+	List<News> getNewsList();
 }

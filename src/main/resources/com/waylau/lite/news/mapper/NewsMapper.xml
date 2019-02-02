@@ -27,8 +27,14 @@
 
 	<select id="getNews" parameterType="long"
 		resultType="com.waylau.lite.news.domain.News">
-		select news_id as newsId, title, author, content
+		select news_id as newsId, title, author, content, creation
 		from t_news where news_id = #{newsId}
 	</select>
 
+	<select id="getNewsList" 
+		resultType="com.waylau.lite.news.domain.News">
+		select news_id as newsId, title, author, content, creation
+		from t_news 
+		order by news_id desc
+	</select>
 </mapper>

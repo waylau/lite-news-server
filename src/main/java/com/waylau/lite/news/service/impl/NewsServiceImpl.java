@@ -3,6 +3,8 @@
  */
 package com.waylau.lite.news.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,11 @@ public class NewsServiceImpl implements NewsService {
 	@Override
 	public News getNews(Long newsId) {
 		return newsMapper.getNews(newsId);
+	}
+	
+	@Override
+	public List<News> getNewsList() {
+		return newsMapper.getNewsList();
 	}
 
 	@Override

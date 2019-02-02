@@ -55,14 +55,20 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	public UserDetails loadUserByUsername(String username) 
 			throws UsernameNotFoundException {
 		User user = userMapper.getUserByUsername(username);
+		UserDetails userDetails;
+		
+		if (user != null) {
+			// 默认都是ADMIN角色
+			List<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority(ADMIN));
 
-		// 默认都是ADMIN角色
-		List<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority(ADMIN));
+			// 构建认证信息
+			userDetails = new org.springframework.security.core.userdetails.
+					User(user.getUsername(),
+					user.getPassword(), authorities);
+		} else {
+			throw new UsernameNotFoundException(username + " is not found");
+		}
 
-		// 构建认证信息
-		UserDetails userDetails = new org.springframework.security.core.userdetails.
-				User(user.getUsername(),
-				user.getPassword(), authorities);
 		return userDetails;
 	}
 

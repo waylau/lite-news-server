@@ -3,6 +3,8 @@
  */
 package com.waylau.lite.news.mapper;
 
+import java.util.List;
+
 import com.waylau.lite.news.domain.News;
 
 /**
@@ -20,5 +22,7 @@ public interface NewsMapper {
 	void deleteNews(Long newsId);
 		
 	News getNews(Long newsId);
+	
+	List<News> getNewsList();
 
 }
