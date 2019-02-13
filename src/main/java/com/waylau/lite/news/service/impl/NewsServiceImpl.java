@@ -6,6 +6,9 @@ package com.waylau.lite.news.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.waylau.lite.news.domain.News;
@@ -25,6 +28,7 @@ public class NewsServiceImpl implements NewsService {
 	private NewsMapper newsMapper;
 
 	@Override
+	@Cacheable(cacheNames="news", key="#newsId")
 	public News getNews(Long newsId) {
 		return newsMapper.getNews(newsId);
 	}
@@ -35,6 +39,7 @@ public class NewsServiceImpl implements NewsService {
 	}
 
 	@Override
+	@CachePut(cacheNames="news", key="#news.newsId")
 	public void updateNews(News news) {
 		newsMapper.updateNews(news);
 	}
@@ -45,6 +50,7 @@ public class NewsServiceImpl implements NewsService {
 	}
 
 	@Override
+	@CacheEvict(cacheNames="news", key="#news.newsId")
 	public void deleteNews(Long newsId) {
 		newsMapper.deleteNews(newsId);
 	}

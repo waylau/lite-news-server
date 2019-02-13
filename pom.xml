@@ -18,7 +18,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<lite.version>1.0.0</lite.version>		
+		<lite.version>1.0.1</lite.version>	
+		<spring-data-redis.version>2.1.4.RELEASE</spring-data-redis.version>	
+		<jedis.version>2.10.2</jedis.version>	
 		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
 		<maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
 	</properties>
@@ -30,6 +32,17 @@
 			<version>${lite.version}</version>
 		</dependency>
 
+		<!-- Redis相关的依赖 -->
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-redis</artifactId>
+		    <version>${spring-data-redis.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>redis.clients</groupId>
+		    <artifactId>jedis</artifactId>
+		    <version>${jedis.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
 import com.waylau.lite.LiteConfig;
+import com.waylau.lite.news.cache.CacheConfig;
 import com.waylau.lite.news.security.WebSecurityConfig;
 
 /**
@@ -16,7 +17,7 @@ import com.waylau.lite.news.security.WebSecurityConfig;
  * @author <a href="https://waylau.com">Way Lau</a> 
  */
 @ComponentScan(basePackages = { "com.waylau.lite.news" })  
-@Import({WebSecurityConfig.class})
+@Import({WebSecurityConfig.class, CacheConfig.class})
 public class AppConfig extends LiteConfig {
 
 }

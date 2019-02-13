@@ -3,6 +3,7 @@
  */
 package com.waylau.lite.news.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -11,8 +12,10 @@ import java.util.Date;
  * @since 1.0.0 2019年1月30日
  * @author <a href="https://waylau.com">Way Lau</a>
  */
-public class News {
+public class News implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private Long newsId;
 	private String title;
 	private String author;
